@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tab {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 1px 3px 0 #cccccc;
+    border-radius: 2px;
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+}
+
+.tab-head {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.tab-head::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.tab-head-item {
+    list-style: none;
+    float: left;
+    min-width: 80px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.tab-head-item::after {
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    right: 100%;
+    bottom: -1px;
+    transition: all .3s ease;
+}
+
+.tab-head-item.on,
+.tab-head-item:hover {
+    color: #0a85e8;
+}
+
+.tab-head-item.on::after,
+.tab-head-item:hover::after {
+    background-color: #0a85e8;
+    right: 0;
+}
+
+.tab-body {
+    margin-top: 20px;
+    position: relative;
+}
+
+.tab-body-item {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s ease;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    line-height: 24px;
+}
+
+.tab-body-item.on {
+    position: relative;
+    opacity: 1;
+}
