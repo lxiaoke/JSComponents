@@ -6,11 +6,15 @@
 
 ```
 JSComponents
-  ├ tab                     选项卡组件文件夹
-  │  ├ themes               主题文件夹
-  │  │  └ default.css       默认主题
-  │  ├ demo.html            选项卡 demo
-  │  └ tab.js               选项卡组件
+  ├ components                   组件目录
+  │  ├ tab                       tab 组件文件夹
+  │  │  ├ themes                 tab 组件主题文件夹
+  │  │  │  └ default.css         默认的 tab 组件主题
+  │  │  └ tab.js                 tab 组件
+  │  └ side-bar
+  ├ examples                     示例文件夹
+  │  └ tab.html                  tab 示例
+  └ README.md                    说明文件
 ```
 
 ## 使用说明
