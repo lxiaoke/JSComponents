@@ -1,6 +1,8 @@
-## JS 常用组件
+# JS 常用组件
 
-### 目录结构
+[TOC]
+
+## 目录结构
 
 ```
 JSComponents
@@ -11,16 +13,26 @@ JSComponents
   │  └ tab.js               选项卡组件
 ```
 
-### 使用说明
+## 使用说明
 
-#### Tab
+### Tab
 
-在 HTML 部分
+#### 示例代码
+
+HTML 部分
+
+> 注意事项
+>
+> 1. `.tab`, `.tab-head`, `.tab-body` 为固定 class，不可更改
+> 2. 选中项 class 为 `on`
+> 3. `data-id` 为 Tab 切换的重要依据，必不可少
+> 4. 
 
 ```html
 <div id="app">
     <div class="tab">
         <ul class="tab-head">
+            <!-- data-id 是 Tab 切换的重要属性，不可缺少 -->
             <li class="tab-head-item on" data-id="1">加密</li>
             <li class="tab-head-item" data-id="2">为什么安全</li>
             <li class="tab-head-item" data-id="3">密码学</li>
@@ -28,6 +40,7 @@ JSComponents
             <li class="tab-head-item" data-id="5">雅典</li>
         </ul>
         <div class="tab-body">
+            <!-- data-for 与 head 中的 data-id 对应 -->
             <div class="tab-body-item on" data-for="1">
                 加密，是以某种特殊的算法改变原有的信息数据，使得未授权的用户即使获得了已加密的信息，但因不知解密的方法，仍然无法了解信息的内容。 在航空学中，指利用航空摄影像片上已知的少数控制点，通过对像片测量和计算的方法在像对或整条航摄带上增加控制点的作业。
             </div>
@@ -48,6 +61,8 @@ JSComponents
 </div>
 ```
 
+JavaScript 部分
+
 ```javascript
 // 1. 导入 Tab，注意路径的修改
 import Tab from './tab/tab.js'
@@ -57,3 +72,12 @@ new Tab({
     el: '#app'
 })
 ```
+
+#### 参数说明
+
+| 参数     | 描述                        | 默认值  |
+| -------- | --------------------------- | ------- |
+| el       | 必需，外层选择器            | -       |
+| themeDir | 主题目录                    | themes/ |
+| theme    | 主题，主题目录下的 css 文件 | default |
+
