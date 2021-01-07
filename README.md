@@ -6,15 +6,18 @@
 
 ```
 JSComponents
-  ├ components                   组件目录
-  │  ├ tab                       tab 组件文件夹
-  │  │  ├ themes                 tab 组件主题文件夹
-  │  │  │  └ default.css         默认的 tab 组件主题
-  │  │  └ tab.js                 tab 组件
-  │  └ side-bar
-  ├ examples                     示例文件夹
-  │  └ tab.html                  tab 示例
-  └ README.md                    说明文件
+  ├ components                      组件目录
+  │  ├ tab                          tab 组件文件夹
+  │  │  ├ themes                    tab 组件主题文件夹
+  │  │  │  └ default.css            默认的 tab 组件主题
+  │  │  └ tab.js                    tab 组件
+  │  └ calendar                     calendar 组件文件夹
+  │     ├ themes                    calendar 组件主题文件夹
+  │     │  └ default.css            默认的 calendar 组件主题
+  │     └ calendar.js               calendar 组件
+  ├ examples                        示例文件夹
+  │  └ tab.html                     tab 示例
+  └ README.md                       说明文件
 ```
 
 ## 使用说明
@@ -30,7 +33,6 @@ HTML 部分
 > 1. `.tab`, `.tab-head`, `.tab-body` 为固定 class，不可更改
 > 2. 选中项 class 为 `on`
 > 3. `data-id` 为 Tab 切换的重要依据，必不可少
-> 4. 
 
 ```html
 <div id="app">
@@ -79,9 +81,47 @@ new Tab({
 
 #### 参数说明
 
-| 参数     | 描述                        | 默认值  |
-| -------- | --------------------------- | ------- |
-| el       | 必需，外层选择器            | -       |
-| themeDir | 主题目录                    | themes/ |
-| theme    | 主题，主题目录下的 css 文件 | default |
+| 参数      | 描述                        | 默认值        |
+| --------- | --------------------------- | ------------- |
+| el        | 必需，外层选择器            | -             |
+| themeDir  | 主题目录                    | themes/       |
+| theme     | 主题，主题目录下的 css 文件 | default       |
+| headClass | 头 class                    | tab-head-item |
+| bodyClass | 主体 class                  | tab-body-item |
+
+----
+
+### Calendar
+
+#### 示例代码
+
+HTML 部分
+
+```html
+<style>
+    #app {
+        width: 300px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px 0 #999999;
+    }
+</style>
+<div id="app"></div>
+```
+
+JavaScript 部分
+
+```javascript
+import Calendar from '../components/calendar/calendar.js'
+let calendar = new Calendar({
+    el: '#app'
+})
+```
+
+#### 参数说明
+
+| 参数     | 描述             | 默认值               |
+| -------- | ---------------- | -------------------- |
+| el       | 必须，外层选择器 | -                    |
+| themeDir | 主题文件夹       | 组件的 themes 文件夹 |
+| theme    | 主题文件         | default              |
 

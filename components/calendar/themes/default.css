@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.calendar-head {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 0 15px;
+}
+
+.calendar-head > span {
+    display: block;
+    line-height: 40px;
+}
+
+.calendar-head > .prev-year,
+.calendar-head > .prev-month,
+.calendar-head > .next-year,
+.calendar-head > .next-month {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.calendar-head > .prev-year:hover,
+.calendar-head > .prev-month:hover,
+.calendar-head > .next-year:hover,
+.calendar-head > .next-month:hover {
+    background-color: #F6F6F6;
+}
+
+.calendar-body {
+    padding: 15px;
+}
+
+.calendar-body > table {
+    width: 100%;
+    text-align: center;
+}
+
+.calendar-body > table td {
+    padding: 5px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+}
+
+.calendar-body > table td:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.calendar-body > table td.active {
+    background-color: rgba(51, 51, 51, .7);
+    color: #FFFFFF;
+}
+
+.calendar-body > table td.is-today::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(51, 51, 51, .7);
+    transform: translateX(-50%);
+}
+
+.calendar-body > table td.not-this-month {
+    color: #CDCDCD;
+}
+
+.calendar-body > table td.not-this-month:hover {
+    color: #FFFFFF;
+}
