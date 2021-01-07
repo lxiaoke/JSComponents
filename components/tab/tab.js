@@ -1,8 +1,11 @@
-export default class Tab {
+import Component from '../component.js'
+
+export default class Tab extends Component {
     constructor (options) {
+        super()
         this.$options = Object.assign({
-            themeDir: 'themes/',            // 主题文件所放的文件夹
-            theme: 'default',               // 主题文件，实际上是 css 文件，即 default.css
+            themeDir: this.getCurrentPath() + '/themes/',           // 主题文件所放的文件夹
+            theme: 'default',                                       // 主题文件，实际上是 css 文件，即 default.css
             headClass: 'tab-head-item',
             bodyClass: 'tab-body-item'
         }, options)
