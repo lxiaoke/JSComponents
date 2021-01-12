@@ -1,4 +1,8 @@
 export default {
+    /**
+     * 转换驼峰 -> -
+     * 如： aaBbbCc -> aa-bbb-cc
+     */
     transCamelToDash(str) {
         let arr = str.split('')
         str = arr.map((item, key) => {
@@ -10,6 +14,10 @@ export default {
         return str.join('').toLowerCase()
     },
 
+    /**
+     * 转换 - -> 驼峰
+     * 如： aa-bbb-cc -> AaBbbCc
+     */
     transDashToCamel(str) {
         let arr = str.split('-')
         str = arr.map(item => {
